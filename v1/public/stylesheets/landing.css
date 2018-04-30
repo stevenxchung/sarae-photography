@@ -37,7 +37,7 @@ body {
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 30s linear infinite;
+  animation: imageAnimation 60s linear infinite;
 }
 
 .slideshow li:nth-child(1) {
@@ -45,11 +45,11 @@ body {
 }
 .slideshow li:nth-child(2) {
   background-image: url("../photos/woman in the wind.jpg");
-  animation-delay: 10s;
+  animation-delay: 20s;
 }
 .slideshow li:nth-child(3) {
   background-image: url("../photos/zionn2.jpg");
-  animation-delay: 20s;
+  animation-delay: 40s;
 }
 
 @keyframes imageAnimation {
@@ -61,10 +61,10 @@ body {
     opacity: 1;
     animation-timing-function: ease-out;
   }
-  20% {
+  40% {
     opacity: 1
   }
-  30% {
+  50% {
     opacity: 0
   }
 }
