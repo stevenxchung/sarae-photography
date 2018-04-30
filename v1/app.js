@@ -1,3 +1,6 @@
+// Import environment variables
+require("dotenv").config();
+
 // Initialize Libraries
 var express = require("express"),
     app = express();
