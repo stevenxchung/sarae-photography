@@ -12,6 +12,20 @@ body {
 
 #landing-header h1 {
   color: #fff;
+  animation: fadein 10s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1
+  }
 }
 
 .slideshow {
@@ -37,7 +51,7 @@ body {
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 60s linear infinite;
+  animation: imageAnimation 40s linear infinite;
 }
 
 .slideshow li:nth-child(1) {
@@ -45,11 +59,11 @@ body {
 }
 .slideshow li:nth-child(2) {
   background-image: url("../photos/woman in the wind.jpg");
-  animation-delay: 20s;
+  animation-delay: 13s;
 }
 .slideshow li:nth-child(3) {
   background-image: url("../photos/zionn2.jpg");
-  animation-delay: 40s;
+  animation-delay: 26s;
 }
 
 @keyframes imageAnimation {
@@ -69,7 +83,7 @@ body {
   }
 }
 
-/* Older browser support - .no-cssanimations class added by modernizr */
+/* Older browser support - .no-cssanimations class added by modernizr
 .no-cssanimations .slideshow li {
   opacity: 1;
 }
