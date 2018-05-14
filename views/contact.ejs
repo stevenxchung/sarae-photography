@@ -1,0 +1,37 @@
+<% include partials/header-contact %>
+
+<div id="container">
+
+  <p>Contact</p>
+  <p id="sp">
+    <a href="/">-SP-</a>
+  </p>
+  <p>
+    <a href="/gallery">Gallery</a>
+  </p>
+
+    <div class="row">
+        <div style = "width: 30%; margin: 150px auto;">
+            <form action="/#" method="POST">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="text" name="email" id="email" placeholder="Your email address">
+                </div>
+                <div class="form-group">
+                    <label for="location">Subject</label>
+                    <input class="form-control" type="text" name="subject" id="subject" placeholder="Title of email">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" type="text" name="description" id="description" placeholder="description" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-lg btn-default btn-block">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<% include partials/footer %>
