@@ -1,0 +1,57 @@
+body {
+  background-color: #181818;
+  font-family: 'Cinzel', serif;
+}
+
+label {
+  color: white;
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration:  none;
+  font-weight:      none;
+  background-color: none;
+  color:            white;
+}
+
+a:hover{
+  text-decoration:  none;
+  font-weight:      bold;
+  background-color: none;
+  color:            white;
+}
+
+p {
+  display: inline-block;
+  color: #fff;
+  width: 30%;
+  float: left;
+  margin: 1.66%;
+  font-size: 2em;
+  text-align: center;
+  animation: fadein-header 2s;
+}
+
+p:nth-child(1) {
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+
+p:nth-child(n+2) {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #181818;
+}
+
+@keyframes fadein-header {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1
+  }
+}
