@@ -47,7 +47,7 @@ app.post("/contact", function(req, res) {
         service: 'Gmail',
         auth: {
           user: process.env.GMAIL,
-          pass: process.env.GMAILPW
+          pass: process.env.GMAILAPP
         }
       });
       var mailOptions = {
