@@ -44,9 +44,7 @@ app.post("/contact", function(req, res) {
   async.waterfall([
     function emailUser(done) {
       var smtpTransport = nodeMailer.createTransport({
-        service: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        service: 'Gmail',
         auth: {
           user: process.env.GMAIL,
           pass: process.env.GMAILPW
