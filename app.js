@@ -4,6 +4,7 @@ require("dotenv").config();
 // Initialize Libraries
 var express = require("express"),
     app = express(),
+    async = require("async"),
     nodeMailer = require("nodemailer"),
     bodyParser = require("body-parser");
 
@@ -36,6 +37,35 @@ app.get("/gallery", function(req, res) {
 // GET - Contact page
 app.get("/contact", function(req, res) {
   res.render("contact");
+});
+
+// POST - Contact form
+app.post("/contact", function(req, res) {
+  async.waterfall([
+    function emailUser(done) {
+      var smtpTransport = nodeMailer.createTransport({
+        service: 'Gmail',
+        auth: {
+          user: process.env.GMAIL,
+          pass: process.env.GMAILPW
+        }
+      });
+      var mailOptions = {
+        to: process.env.GMAIL,
+        from: "Your Customer",
+        subject: "INQUIRY: " + req.body.subject,
+        text: "FROM: " + req.body.email + " (" + req.body.name + ");\n\n" +
+        req.body.description
+      };
+      smtpTransport.sendMail(mailOptions, function(err) {
+        done(err);
+      });
+      done();
+    }
+  ], function(err) {
+    console.log('Success! Your message has been sent!');
+    res.redirect('/');
+  });
 });
 
 app.listen(process.env.PORT, process.env.IP, function() {
