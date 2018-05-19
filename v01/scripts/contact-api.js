@@ -11,7 +11,7 @@ function sendDataToLambda(e) {
   var formMessage = document.querySelector('.form-message').value;
 
   // This is the endpoint we created in our API Gateway. This is where we make our POST request, which calls our Lambda function.
-  var endpoint = 'https://your-api-gateway-endpoint.com/ContactFormLambda';
+  var endpoint = "https://g4nzsevhvi.execute-api.us-east-1.amazonaws.com/prod/ContactFormLambda";
 
   // Remember those form values we just grabbed? We're going to put them into an object here.
   var body = {

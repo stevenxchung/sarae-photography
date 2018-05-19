@@ -15,18 +15,19 @@
             <form id="serverless-contact-form">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input class="form-control" type="text" name="email" id="email" placeholder="Your email address" class="form-email">
+                    <input class="form-control form-email" type="text" name="email" id="email" placeholder="Your email address">
                 </div>
                 <div class="form-group">
                     <label for="location">Subject</label>
-                    <input class="form-control" type="text" name="subject" id="subject" placeholder="Title of email" class="form-subject">
+                    <input class="form-control form-subject" type="text" name="subject" id="subject" placeholder="Title of email">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" type="text" name="description" id="description" placeholder="description" rows="10" class="form-message"></textarea>
+                    <textarea class="form-control form-message" type="text" name="description" id="description" placeholder="description" rows="10"></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary btn-lg btn-default btn-block">Send</button>
+                    <!-- <input type="submit" name="submit" value="Submit" class="form-submit"> -->
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Send</button>
                 </div>
             </form>
         </div>
