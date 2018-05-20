@@ -1,29 +1,35 @@
 <% include partials/header-gallery %>
 
-<div id="container">
+<div class="container page">
 
-  <p>Gallery</p>
+<div id="nav">
+ <p>Gallery</p>
   <p id="sp">
     <a href="/">-SP-</a>
   </p>
-  <p>
-    <a href="/contact">Contact</a>
-  </p>
+  <li class="dropdown">
+    <p class="dropbtn">Menu</p>
+    <div class="dropdown-content">
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </li>
+</div>
 
-  <!-- First Row -->
-  <img class="rowOne-img" src="photos/cropped/rN3.jpg">
-  <img class="rowOne-img" src="photos/cropped/woman in the wind.jpg">
-  <img class="rowOne-img" src="photos/cropped/zionn2.jpg">
+<div id="img-grid">
+  <% var index = 4 %>
+  <% var init = 1 %>
+  <% for (var i = 1; i < 4; i++) { %>
+    <% for (var j = init; j < index; j++) { %>
+    <div class="col-md-4 col-sm-6 images-div">
+      <img class="row<%= i %>-img img" src="photos/cropped/0<%= j %>.jpg">
+    </div>
+    <% } %>
+    <% init += 3 %>
+    <% index += 3 %>
+  <% } %>
+</div>
 
-  <!-- Second Row -->
-  <img class="rowTwo-img" src="photos/cropped/wss7.jpg">
-  <img class="rowTwo-img" src="photos/cropped/PFB1.jpg">
-  <img class="rowTwo-img" src="photos/cropped/kings canyon2.jpg">
-
-  <!-- Third Row -->
-  <img class="rowThree-img" src="photos/cropped/chesterfield 5.jpg">
-  <img class="rowThree-img" src="photos/cropped/sunday 1.jpg">
-  <img class="rowThree-img" src="photos/cropped/13.jpg">
 </div>
 
 <% include partials/footer %>

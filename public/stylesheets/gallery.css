@@ -8,6 +8,8 @@ a {
   font-weight:      none;
   background-color: none;
   color:            white;
+  opacity: 1;
+  transition: opacity 0.5s linear;
 }
 
 a:hover{
@@ -15,32 +17,54 @@ a:hover{
   font-weight:      bold;
   background-color: none;
   color:            white;
+  opacity: 0.5;
 }
 
-.rowOne-img {
+img {
+  opacity: 1;
+  transition: opacity 0.5s linear;
+  box-sizing: border-box;
+  border: 15px solid rgba(255, 255, 255, 0.05);
+}
+
+img:hover {
+  opacity: 0.50;
+}
+
+/*#container {
+  margin: 0 1% 0 1%;
+  min-width: 400px;
+}*/
+
+.page {
+  width: 98%;
+}
+
+.img {
+  margin: 15px 0 15px 0;
+}
+
+.row1-img {
   box-sizing: border-box;
   border: 15px solid #fff;
-  width: 30%;
+  width: 100%;
   float: left;
-  margin: 1.66%;
   animation: fadein-image 4s;
 }
 
-.rowTwo-img {
+.row2-img {
   box-sizing: border-box;
   border: 15px solid #fff;
-  width: 30%;
+  width: 100%;
   float: left;
-  margin: 1.66%;
   animation: fadein-image 6s;
 }
 
-.rowThree-img {
+.row3-img {
   box-sizing: border-box;
   border: 15px solid #fff;
-  width: 30%;
+  width: 100%;
   float: left;
-  margin: 1.66%;
   animation: fadein-image 8s;
 }
 
@@ -57,7 +81,13 @@ a:hover{
   }
 }
 
+p:nth-child(n+2):hover {
+  opacity: 0.5;
+}
+
 p {
+  opacity: 1;
+  transition: opacity 1s linear;
   display: inline-block;
   color: #fff;
   width: 30%;

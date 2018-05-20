@@ -13,7 +13,8 @@ body {
 #landing-header h1 {
   font-size: 3.5em;
   color: #fff;
-  animation: fadein-header 8s;
+  animation: fadein-header 6s;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
 
 @keyframes fadein-header {
@@ -30,7 +31,8 @@ body {
 }
 
 #below-header {
-  animation: fadein 10s;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  animation: fadein 8s;
 }
 
 @keyframes fadein {
@@ -56,6 +58,8 @@ a {
   font-weight:      none;
   background-color: none;
   color:            white;
+  opacity: 1;
+  transition: opacity 1s linear;
 }
 
 a:hover{
@@ -63,6 +67,7 @@ a:hover{
   font-weight:      bold;
   background-color: none;
   color:            white;
+  opacity: 0.5;
 }
 
 .slideshow {
