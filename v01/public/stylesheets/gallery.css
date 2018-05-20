@@ -17,30 +17,40 @@ a:hover{
   color:            white;
 }
 
-.rowOne-img {
+/*#container {
+  margin: 0 1% 0 1%;
+  min-width: 400px;
+}*/
+
+.page {
+  width: 98%;
+}
+
+.img {
+  margin: 15px 0 15px 0;
+}
+
+.row1-img {
   box-sizing: border-box;
   border: 15px solid #fff;
-  width: 30%;
+  width: 100%;
   float: left;
-  margin: 1.66%;
   animation: fadein-image 4s;
 }
 
-.rowTwo-img {
+.row2-img {
   box-sizing: border-box;
   border: 15px solid #fff;
-  width: 30%;
+  width: 100%;
   float: left;
-  margin: 1.66%;
   animation: fadein-image 6s;
 }
 
-.rowThree-img {
+.row3-img {
   box-sizing: border-box;
   border: 15px solid #fff;
-  width: 30%;
+  width: 100%;
   float: left;
-  margin: 1.66%;
   animation: fadein-image 8s;
 }
 
