@@ -3,6 +3,10 @@ body {
   font-family: 'Cinzel', serif;
 }
 
+form {
+  min-width: 200px;
+}
+
 label {
   color: white;
   font-size: 1.5em;
@@ -43,6 +47,11 @@ p:nth-child(n+2) {
   border-bottom: 2px solid #181818;
 }
 
+input,
+textarea {
+  font-family: Serif;
+}
+
 @keyframes fadein-header {
   0% {
     opacity: 0;
@@ -54,4 +63,37 @@ p:nth-child(n+2) {
   100% {
     opacity: 1
   }
+}
+
+/*Form fade-in*/
+#contact-form {
+  animation: fadein 5s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+#form-div {
+  width: 50%;
+  margin: 100px auto;
+  max-width: 500px;
+}
+
+#nav {
+  width: 100%;
+  min-width: 400px;
+}
+
+.page {
+  width: 98%;
 }
