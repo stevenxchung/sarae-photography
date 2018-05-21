@@ -29,6 +29,11 @@ app.get("/", function(req, res) {
   res.render("landing");
 });
 
+// GET - About me page
+app.get("/about", function(req, res) {
+  res.render("about");
+});
+
 // GET - Gallery page
 app.get("/gallery", function(req, res) {
   res.render("gallery");
