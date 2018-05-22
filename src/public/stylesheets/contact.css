@@ -1,0 +1,112 @@
+body {
+  background-color: #181818;
+  font-family: 'Cinzel', serif;
+}
+
+form {
+  min-width: 200px;
+}
+
+label {
+  color: white;
+  font-size: 1.5em;
+}
+
+a {
+  text-decoration:  none;
+  font-weight:      none;
+  background-color: none;
+  color:            white;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+a:hover{
+  text-decoration:  none;
+  font-weight:      bold;
+  background-color: none;
+  color:            white;
+  opacity: 0.5;
+}
+
+p:nth-child(n+2):hover {
+  opacity: 0.5;
+}
+
+p {
+  opacity: 1;
+  transition: opacity 1s linear;
+  display: inline-block;
+  color: #fff;
+  width: 30%;
+  float: left;
+  margin: 1.66%;
+  font-size: 2em;
+  text-align: center;
+  animation: fadein-header 2s;
+}
+
+p:nth-child(1) {
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+
+p:nth-child(n+2) {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #181818;
+}
+
+input,
+textarea {
+  font-family: Serif;
+}
+
+@keyframes fadein-header {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+/*Form fade-in*/
+#contact-form {
+  animation: fadein 5s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+#form-div {
+  width: 50%;
+  margin: 100px auto;
+  max-width: 500px;
+}
+
+#nav {
+  width: 100%;
+  min-width: 400px;
+}
+
+.page {
+  width: 98%;
+}
+
+.logo {
+  width: 50%;
+}
