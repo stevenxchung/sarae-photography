@@ -11,3 +11,10 @@ Sarae's Photography is a website designed to showcase Sarae's collection of phot
 * Add header (separate for gallery and contact) and footer files
 * Add cropped photos to gallery page
 * Add elements to contact page including an email form
+
+## Sarae's Photography v2
+* Add serverless form (removed for maintenance)
+* Add an about page with navigation bar
+* Add styling to the about page
+* Add feature to expand images on click for gallery page
+* Add a new navigation bar
