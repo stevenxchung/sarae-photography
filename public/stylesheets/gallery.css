@@ -23,8 +23,6 @@ a:hover{
 img {
   opacity: 1;
   transition: opacity 0.5s linear;
-  box-sizing: border-box;
-  border: 15px solid rgba(255, 255, 255, 0.05);
 }
 
 img:hover {
@@ -35,6 +33,10 @@ img:hover {
   margin: 0 1% 0 1%;
   min-width: 400px;
 }*/
+
+.fig-cap {
+  text-align: center;
+}
 
 .page {
   width: 98%;
@@ -92,13 +94,14 @@ p {
   color: #fff;
   width: 30%;
   float: left;
-  margin: 1.66%;
+  padding-top: 5.5%;
+  margin-left: 1.66%;
   font-size: 2em;
   text-align: center;
   animation: fadein-header 2s;
 }
 
-p:nth-child(1) {
+/*p:nth-child(1) {
   padding-bottom: 5px;
   border-bottom: 2px solid white;
 }
@@ -106,7 +109,7 @@ p:nth-child(1) {
 p:nth-child(n+2) {
   padding-bottom: 5px;
   border-bottom: 2px solid #181818;
-}
+}*/
 
 @keyframes fadein-header {
   0% {

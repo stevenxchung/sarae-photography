@@ -2,13 +2,56 @@
 <html>
   <head>
     <title>Sarae's Photography</title>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <!-- Gallery CSS -->
     <link rel="stylesheet" href="/stylesheets/gallery.css">
+    <!-- Menu CSS -->
     <link rel="stylesheet" href="/stylesheets/menu.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700" rel="stylesheet">
+    <!-- AJAX -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
-
     <!-- Make site responsive on mobile/tablet -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- PhotoSwipe -->
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css'>
+    <link rel='stylesheet prefetch' href='stylesheets/photoswipe-defaults.css'>
   </head>
   <body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <p id="bar-left"><a href="/gallery">Gallery</a></p>
+      </ul>
+
+      <span class="logo-fade">
+        <a href="/"><img class="logo" src="photos/logo.png"></a>
+      </span>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" id="bar-right">
+          <a href="#" class="dropdown-toggle fader" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
