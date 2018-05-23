@@ -72,15 +72,19 @@ body {
 .nav .open>a,
 .nav .open>a:focus,
 .nav .open>a:hover {
-  background-color: transparent; !important;
+  background-color: transparent !important;
+}
+
+.fader-left {
+  animation: fader 3s;
 }
 
 .logo-fade {
-  animation: fader 6s;
+  animation: fader 4s;
 }
 
-.fader {
-  animation: fader 2s;
+.fader-right {
+  animation: fader 3s;
 }
 
 @keyframes fader {
