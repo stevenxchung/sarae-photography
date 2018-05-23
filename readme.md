@@ -16,5 +16,8 @@ Sarae's Photography is a website designed to showcase Sarae's collection of phot
 * Add serverless form (removed for maintenance)
 * Add an about page with navigation bar
 * Add styling to the about page
-* Add feature to expand images on click for gallery page
+* Add feature to expand images on click for gallery page (ColorBox but later upgraded to PhotoSwipe)
 * Add a new navigation bar
+* Fix columns box issue on each page (reformating the navbar)
+* Fix font sizing issue on each page (reformating the navbar)
+* Optimize for mobile with styling
