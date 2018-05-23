@@ -52,7 +52,7 @@ p {
   animation: fadein-header 2s;
 }
 
-p:nth-child(1) {
+/*p:nth-child(1) {
   padding-bottom: 5px;
   border-bottom: 2px solid white;
 }
@@ -60,7 +60,7 @@ p:nth-child(1) {
 p:nth-child(n+2) {
   padding-bottom: 5px;
   border-bottom: 2px solid #181818;
-}
+}*/
 
 @keyframes fadein-header {
   0% {
@@ -91,19 +91,14 @@ p:nth-child(n+2) {
   width: 98%;
 }
 
-.logo {
-  width: 50%;
-}
-
 .sarae {
   box-sizing: border-box;
   border: 15px solid rgba(255, 255, 255, 0.05);
 }
 
 .bio {
-  width: 50%;
-  margin: 50px 25%;
-  min-width: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   animation: fadein-bio 4s;
 }
 

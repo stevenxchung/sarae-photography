@@ -34,12 +34,12 @@ img:hover {
   min-width: 400px;
 }*/
 
-.page {
-  width: 98%;
+.fig-cap {
+  text-align: center;
 }
 
-.logo {
-  width: 50%;
+.page {
+  width: 98%;
 }
 
 .img {
@@ -94,13 +94,14 @@ p {
   color: #fff;
   width: 30%;
   float: left;
-  margin: 1.66%;
+  padding-top: 5.5%;
+  margin-left: 1.66%;
   font-size: 2em;
   text-align: center;
   animation: fadein-header 2s;
 }
 
-p:nth-child(1) {
+/*p:nth-child(1) {
   padding-bottom: 5px;
   border-bottom: 2px solid white;
 }
@@ -108,7 +109,7 @@ p:nth-child(1) {
 p:nth-child(n+2) {
   padding-bottom: 5px;
   border-bottom: 2px solid #181818;
-}
+}*/
 
 @keyframes fadein-header {
   0% {
