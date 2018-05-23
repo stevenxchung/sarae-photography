@@ -2,21 +2,7 @@
 
 <div class="container page">
 
-<div id="nav">
- <p>Gallery</p>
-  <p id="sp">
-    <a href="/"><img class="logo" src="photos/logo.png"></a>
-  </p>
-  <li class="dropdown">
-    <p class="dropbtn">Menu</p>
-    <div class="dropdown-content">
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </div>
-  </li>
-</div>
-
-<div id="img-grid">
+<div id="img-grid" class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
   <% var index = 4 %>
   <% var init = 1 %>
   <% var caption = [
@@ -30,45 +16,97 @@
         "Blacksburg, VA",
         "Blue Ridge Parkway, VA"
         ] %>
+  <% var imgSize = [
+        "1200x636",
+        "900x600",
+        "1200x706",
+        "1200x606",
+        "1200x553",
+        "1200x472",
+        "1200x629",
+        "900x600",
+        "1200x623"
+        ] %>
   <% for (var i = 1; i < 4; i++) { %>
     <% for (var j = init; j < index; j++) { %>
-    <div class="col-md-4 col-sm-6 images-div">
-      <a href="photos/box/0<%= j %>.jpg" title="<%= caption[j-1] %>" class="group1">
-        <img class="row<%= i %>-img img" src="photos/cropped/0<%= j %>.jpg">
+    <figure class="col-md-4 col-sm-6 images-div" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      <a href="photos/box/0<%= j %>.jpg" itemprop="contentUrl" data-size="<%= imgSize[j-1] %>">
+          <img class="row<%= i %>-img img" src="photos/cropped/0<%= j %>.jpg" itemprop="thumbnail" alt="Image description" />
       </a>
-    </div>
+      <figcaption style="display: none" itemprop="caption description"><%= caption[j-1] %></figcaption>
+    </figure>
     <% } %>
     <% init += 3 %>
     <% index += 3 %>
   <% } %>
 </div>
 
-<!-- This contains the hidden content for inline calls -->
-<div id="cboxOverlay" style="opacity: 0; cursor: pointer; visibility: visible; display: none;"></div>
-  <div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none; visibility: visible; top: 150px; left: 428px; position: absolute; width: 728px; height: 505px; opacity: 0;">
-    <div id="cboxWrapper" style="height: 505px; width: 728px;">
-        <div>
-            <div id="cboxTopLeft" style="float: left;"></div>
-            <div id="cboxTopCenter" style="float: left; width: 700px;"></div>
-            <div id="cboxTopRight" style="float: left;"></div>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
         </div>
-        <div style="clear: left;">
-            <div id="cboxMiddleLeft" style="float: left; height: 448px;"></div>
-            <div id="cboxContent" style="float: left; width: 700px; height: 448px;">
-                <div id="cboxTitle" style="float: left; display: block;">Me and my grandfather on the Ohoopee.</div>
-                <div id="cboxCurrent" style="float: left; display: block;">image 1 of 3</div><button type="button" id="cboxPrevious" style="display: block;">previous</button><button type="button" id="cboxNext" style="display: block;">next</button><button type="button" id="cboxSlideshow" style="display: none;"></button>
-                <div id="cboxLoadingOverlay" style="float: left; display: none;"></div>
-                <div id="cboxLoadingGraphic" style="float: left; display: none;"></div><button type="button" id="cboxClose">close</button></div>
-            <div id="cboxMiddleRight" style="float: left; height: 448px;"></div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center fig-cap"></div>
+            </div>
+
         </div>
-        <div style="clear: left;">
-            <div id="cboxBottomLeft" style="float: left;"></div>
-            <div id="cboxBottomCenter" style="float: left; width: 700px;"></div>
-            <div id="cboxBottomRight" style="float: left;"></div>
-        </div>
+
     </div>
-    <div style="position: absolute; width: 9999px; visibility: hidden; max-width: none; display: none;"></div>
-  </div>
+
+</div>
 
 </div>
 
