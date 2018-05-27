@@ -14,7 +14,10 @@
         "Kings Canyon National Park, CA",
         "Chesterfield, VA",
         "Blacksburg, VA",
-        "Blue Ridge Parkway, VA"
+        "Blue Ridge Parkway, VA",
+        "Grayson Highlands State Park, VA",
+        "Diablo Lake, WA",
+        "Grayson Highlands State Park, VA"
         ] %>
   <% var imgSize = [
         "1200x636",
@@ -25,9 +28,12 @@
         "1200x472",
         "1200x629",
         "900x600",
-        "1200x623"
+        "1200x623",
+        "1200x800",
+        "1200x800",
+        "1200x800"
         ] %>
-  <% for (var i = 1; i < 4; i++) { %>
+  <% for (var i = 1; i < 5; i++) { %>
     <% for (var j = init; j < index; j++) { %>
     <figure class="col-md-4 col-sm-6 images-div" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
       <a href="photos/box/0<%= j %>.jpg" itemprop="contentUrl" data-size="<%= imgSize[j-1] %>">
