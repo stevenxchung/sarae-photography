@@ -21,3 +21,5 @@ Sarae's Photography is a website designed to showcase Sarae's collection of phot
 * Fix columns box issue on each page (reformating the navbar)
 * Fix font sizing issue on each page (reformating the navbar)
 * Optimize for mobile with styling
+* Add 3 more images to balance out images when resizing
+* Re-adjust gallery.ejs and CSS to accommodate changes
