@@ -70,6 +70,14 @@ img:hover {
   animation: fadein-image 8s;
 }
 
+.row4-img {
+  box-sizing: border-box;
+  border: 15px solid #fff;
+  width: 100%;
+  float: left;
+  animation: fadein-image 10s;
+}
+
 @keyframes fadein-image {
   0% {
     opacity: 0;
