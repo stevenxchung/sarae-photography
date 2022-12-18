@@ -73,9 +73,9 @@ app.post("/contact", function(req, res) {
   });
 });
 
-var port = process.env.PORT ? process.env.PORT : 'localhost'
-var ip = process.env.IP ? process.env.IP : '3000'
+var ip = process.env.IP || 'localhost'
+var port = process.env.PORT || 3000
 
-app.listen(process.env.PORT, process.env.IP, function() {
-  console.log(`Server is live at ${port}:${ip}!`);
+app.listen(port, ip, function() {
+  console.log(`Server is live at ${ip}:${port}!`);
 });

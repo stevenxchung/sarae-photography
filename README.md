@@ -8,7 +8,7 @@ I used to host this application on Heroku but they discontinued their free hosti
 
 1. Clone this repository
 2. Run `npm i`
-3. Run `npm start`
+3. Run `npm run start:local`
 4. App will be hosted at `http://localhost:3000/`
 
 ## Sarae's Photography v1
