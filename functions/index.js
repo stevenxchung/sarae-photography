@@ -1,8 +1,9 @@
+const functions = require("firebase-functions");
 // Import environment variables
 require("dotenv").config();
 
 // Initialize Libraries
-var express = require("express"),
+const express = require("express"),
     app = express(),
     async = require("async"),
     nodeMailer = require("nodemailer"),
@@ -48,14 +49,14 @@ app.get("/contact", function(req, res) {
 app.post("/contact", function(req, res) {
   async.waterfall([
     function emailUser(done) {
-      var smtpTransport = nodeMailer.createTransport({
+      const smtpTransport = nodeMailer.createTransport({
         service: 'Gmail',
         auth: {
           user: process.env.GMAIL,
           pass: process.env.GMAILAPP
         }
       });
-      var mailOptions = {
+      const mailOptions = {
         to: process.env.GMAIL,
         from: "Your Customer",
         subject: "INQUIRY: " + req.body.subject,
@@ -77,3 +78,9 @@ app.listen(process.env.PORT, process.env.IP, function() {
   console.log("Server is live!");
   console.log("PORT: " + process.env.PORT + " / " + "IP: " + process.env.IP);
 });
+
+
+// Create and deploy your first functions
+// https://firebase.google.com/docs/functions/get-started
+
+exports.app = functions.https.onRequest(app);
