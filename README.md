@@ -2,7 +2,14 @@
 
 Sarae's Photography is a website designed to showcase Sarae's collection of photography and passion for traveling and exploring new places. This file will serve to track any major changes and updates to Sarae's website.
 
-**Sarae's deployed website will be hosted [here](https://saraes.herokuapp.com/) in early development stages.**
+## Local Run
+
+I used to host this application on Heroku but they discontinued their free hosting so running locally is the next best option.
+
+1. Clone this repository
+2. Run `npm i`
+3. Run `npm start`
+4. App will be hosted at `http://localhost:3000/`
 
 ## Sarae's Photography v1
 
