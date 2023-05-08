@@ -2,11 +2,11 @@
   "name": "v1",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "api/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:local": "start http://localhost:3000 && node app.js",
-    "start": "node app.js"
+    "start:local": "start http://localhost:3000 && node api/index.js",
+    "start": "node api/index.js"
   },
   "author": "Steven Chung",
   "license": "ISC",

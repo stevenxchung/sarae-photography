@@ -6,14 +6,15 @@ var express = require("express"),
     app = express(),
     async = require("async"),
     nodeMailer = require("nodemailer"),
-    bodyParser = require("body-parser");
+    bodyParser = require("body-parser"),
+    path = require("path");
 
 // Use ejs files for views
 app.set("view engine", "ejs");
 
 // Serving static files from public and scripts from a scripts folder
-app.use(express.static(__dirname + "/public"));
-app.use(express.static(__dirname + "/scripts"));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../scripts')));
 
 
 // Enable body parser to retrieve form data
