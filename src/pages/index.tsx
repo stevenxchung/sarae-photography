@@ -1,13 +1,17 @@
-import { type NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const images = ["/og/rN3.jpg", "/og/woman-in-the-wind.jpg", "/og/zionn2.jpg"];
+import fs from "fs";
+import path from "path";
 
-const Home: NextPage = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+interface HomeProps {
+  images: string[];
+}
+const Home: NextPage<HomeProps> = ({ images }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,7 +21,7 @@ const Home: NextPage = () => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [images.length]);
 
   return (
     <>
@@ -31,7 +35,7 @@ const Home: NextPage = () => {
           {images.map((imageUrl, index) => (
             <Image
               key={index}
-              src={imageUrl ?? ""}
+              src={`/og/${imageUrl}` ?? ""}
               alt="Landing page background"
               className={`absolute h-full w-full object-cover transition-opacity duration-2000 ${
                 index === currentImageIndex ? "opacity-100" : "opacity-0"
@@ -41,8 +45,8 @@ const Home: NextPage = () => {
             ></Image>
           ))}
           <div className="z-10">
-            <Link href={`/gallery`} className="text-slate-100 hover:text-white">
-              <h1 className="animate-fade-in-slow text-center text-6xl">
+            <Link href={`/gallery`} className="hover:opacity-75">
+              <h1 className="animate-fade-in-slow text-center text-5xl">
                 Sarae Photography
               </h1>
             </Link>
@@ -51,6 +55,17 @@ const Home: NextPage = () => {
       </main>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<HomeProps> = () => {
+  const imageDirectory = path.join(process.cwd(), "public", "og");
+  const images = fs.readdirSync(imageDirectory);
+
+  return {
+    props: {
+      images,
+    },
+  };
 };
 
 export default Home;
