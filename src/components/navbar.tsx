@@ -6,32 +6,36 @@ const Navbar = () => {
   const router = useRouter();
   const { pathname } = router;
   const isGalleryPage = pathname === "/gallery";
-  const imageRemMultiplier = 25;
+  const imageSize = 16 * 25;
+
+  const navText = (
+    <h2 className="animate-fade-in-medium text-xl">
+      {isGalleryPage ? `About` : `Gallery`}
+    </h2>
+  );
 
   return (
     <nav>
-      <ul className="flex justify-between">
-        {/* Empty to even out spaces */}
-        <li></li>
-        <li className="ml-12">
+      <ul className="flex flex-wrap justify-between gap-8 sm:flex-col md:flex-row md:justify-center">
+        {/* Transparent to even out spaces */}
+        <li className="mx-auto text-transparent md:ml-2 md:mt-2">{navText}</li>
+        <li className="mx-auto">
           <Link href={`/`} className="hover:opacity-75">
             <Image
-              className="animate-fade-in-slow"
+              className="animate-fade-in-medium"
               src={`/logo.png`}
               alt="Landing page background"
-              width={16 * imageRemMultiplier}
-              height={16 * imageRemMultiplier}
-            ></Image>
+              width={imageSize}
+              height={imageSize}
+            />
           </Link>
         </li>
-        <li>
+        <li className="mx-auto md:mr-2 md:mt-2">
           <Link
             href={isGalleryPage ? `/about` : `/gallery`}
             className="hover:opacity-75"
           >
-            <h2 className="animate-fade-in-slow text-xl">
-              {isGalleryPage ? `About` : `Gallery`}
-            </h2>
+            {navText}
           </Link>
         </li>
       </ul>

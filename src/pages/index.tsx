@@ -46,7 +46,7 @@ const Home: NextPage<HomeProps> = ({ images }) => {
           ))}
           <div className="z-10">
             <Link href={`/gallery`} className="hover:opacity-75">
-              <h1 className="animate-fade-in-slow text-center text-5xl">
+              <h1 className="animate-fade-in-medium text-center text-5xl">
                 Sarae Photography
               </h1>
             </Link>

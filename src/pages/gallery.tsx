@@ -13,18 +13,18 @@ interface GalleryProps {
 
 const Gallery: NextPage<GalleryProps> = ({ images }) => {
   const [loadedRows, setLoadedRows] = useState<number>(0);
+  const totalRows = Math.ceil(images.length / 3); // Calculate the total number of rows
+  const delayBetweenRows = 1000; // Delay in milliseconds between loading each row
 
   useEffect(() => {
-    const delayBetweenRows = 1000; // Delay in milliseconds between loading each row
-
     const timer = setTimeout(() => {
-      setLoadedRows((prevRows) => prevRows + 1);
+      setLoadedRows((prevRows) => Math.min(prevRows + 1, totalRows));
     }, delayBetweenRows);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [loadedRows]);
+  }, [loadedRows, totalRows]);
 
   const visibleImages = images.slice(0, loadedRows * 3);
 
@@ -33,22 +33,21 @@ const Gallery: NextPage<GalleryProps> = ({ images }) => {
       <Head>
         <title>Gallery</title>
       </Head>
-      <main className="min-h-screen bg-black px-6 py-6">
+      <main className="min-h-screen bg-black px-6 py-8">
         <Navbar />
-        <br />
-        <div className="grid grid-cols-3 gap-6">
+        <div className="mt-8 grid grid-cols-3 gap-6">
           {visibleImages.map((imageUrl, index) => (
             <div
               key={index}
-              className="animate-fade-in-slow col-span-4 overflow-hidden bg-gray-200 sm:col-span-2 md:col-span-1"
+              className="col-span-4 animate-fade-in-medium overflow-hidden bg-gray-200 sm:col-span-2 md:col-span-1"
             >
               <Image
                 key={index}
                 src={`/cropped/${imageUrl}`}
                 alt={`Image ${index + 1}`}
                 className="h-full w-full object-cover"
-                width={1000}
-                height={1000}
+                width={500}
+                height={500}
               />
             </div>
           ))}
@@ -60,7 +59,12 @@ const Gallery: NextPage<GalleryProps> = ({ images }) => {
 
 export const getStaticProps: GetStaticProps<GalleryProps> = () => {
   const imageDirectory = path.join(process.cwd(), "public", "cropped");
-  const images = fs.readdirSync(imageDirectory);
+  const images = fs.readdirSync(imageDirectory).sort((a, b) => {
+    const aNumber = parseInt(a, 10);
+    const bNumber = parseInt(b, 10);
+
+    return aNumber - bNumber;
+  });
 
   return {
     props: {
