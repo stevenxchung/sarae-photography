@@ -1,36 +1,28 @@
-# Sarae's Photography
+# Create T3 App
 
-Sarae's Photography is a website designed to showcase Sarae's collection of photography and passion for traveling and exploring new places. This file will serve to track any major changes and updates to Sarae's website.
+This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
-## Local Run
+## What's next? How do I make an app with this?
 
-I used to host this application on Heroku but they discontinued their free hosting so running locally is the next best option.
+We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
 
-1. Clone this repository
-2. Run `npm i`
-3. Run `npm run start:local`
-4. App will be hosted at `http://localhost:3000/`
+If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
 
-## Sarae's Photography v1
+- [Next.js](https://nextjs.org)
+- [NextAuth.js](https://next-auth.js.org)
+- [Prisma](https://prisma.io)
+- [Tailwind CSS](https://tailwindcss.com)
+- [tRPC](https://trpc.io)
 
-- Add landing page with scrolling image effect
-- Add links to gallery and contact page on landing page
-- Add landing, gallery, and contact routes to main server script
-- Add views for landing, gallery, and contact
-- Add styling for landing, gallery, and contact
-- Add header (separate for gallery and contact) and footer files
-- Add cropped photos to gallery page
-- Add elements to contact page including an email form
+## Learn More
 
-## Sarae's Photography v2
+To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
 
-- Add serverless form (removed for maintenance)
-- Add an about page with navigation bar
-- Add styling to the about page
-- Add feature to expand images on click for gallery page (ColorBox but later upgraded to PhotoSwipe)
-- Add a new navigation bar
-- Fix columns box issue on each page (reformating the navbar)
-- Fix font sizing issue on each page (reformating the navbar)
-- Optimize for mobile with styling
-- Add 3 more images to balance out images when resizing
-- Re-adjust gallery.ejs and CSS to accommodate changes
+- [Documentation](https://create.t3.gg/)
+- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+
+You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+
+## How do I deploy this?
+
+Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
