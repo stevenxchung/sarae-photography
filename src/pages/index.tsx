@@ -42,7 +42,7 @@ const Home: NextPage<HomeProps> = ({ images }) => {
               }`}
               width={6000}
               height={4000}
-            ></Image>
+            />
           ))}
           <div className="z-10">
             <Link href={`/gallery`} className="hover:opacity-75">
