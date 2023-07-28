@@ -39,7 +39,7 @@ const Gallery: NextPage<GalleryProps> = ({ images }) => {
           {visibleImages.map((imageUrl, index) => (
             <div
               key={index}
-              className="col-span-4 animate-fade-in-medium overflow-hidden bg-gray-200 sm:col-span-2 md:col-span-1"
+              className="col-span-3 animate-fade-in-medium overflow-hidden bg-gray-200 sm:col-span-1"
             >
               <Image
                 key={index}
